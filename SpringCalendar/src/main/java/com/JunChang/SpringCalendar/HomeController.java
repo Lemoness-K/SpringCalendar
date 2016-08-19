@@ -33,6 +33,10 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
+		String helloworld = "Hello, SpringFramework!";
+		
+		model.addAttribute("helloMessage", helloworld);
+		
 		return "home";
 	}
 	
