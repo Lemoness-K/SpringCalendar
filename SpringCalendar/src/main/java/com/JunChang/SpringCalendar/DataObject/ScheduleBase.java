@@ -12,16 +12,11 @@ import java.util.Date;
  * @Desc This class store data of schedule infomation like meeting, promise or holiday
  *
  */
-
-class UserBase{
-	
-}
-
 public class ScheduleBase {
 	/*
 	 * Private Variables
 	 */
-//	private UserBase UserInfo;
+	private UserBase UserInfo;
 	private String UnqID;
 	private Date StartTime;
 	private Date EndTime;
@@ -33,18 +28,18 @@ public class ScheduleBase {
 	public ScheduleBase() {
 		super();
 	}
-	public ScheduleBase(/*UserBase userInfo, */Date startTime, Date endTime,
+	public ScheduleBase(UserBase data, Date startTime, Date endTime,
 			String title) {
 		super();
-//		UserInfo = userInfo;
+		UserInfo = data;
 		StartTime = startTime;
 		EndTime = endTime;
 		Title = title;
 	}
-	public ScheduleBase(/*UserBase userInfo, */String unqID, Date startTime,
+	public ScheduleBase(UserBase data, String unqID, Date startTime,
 			Date endTime, String title) {
 		super();
-//		UserInfo = userInfo;
+		UserInfo = data;
 		UnqID = unqID;
 		StartTime = startTime;
 		EndTime = endTime;
@@ -57,6 +52,18 @@ public class ScheduleBase {
 	 */
 	public String getUnqID() {
 		return UnqID;
+	}
+	public UserBase getUserInfo() {
+		return UserInfo;
+	}
+	public void setUserInfo(String email, String location) {
+		UserInfo = new UserBase(email, location);
+	}
+	public void setUserInfo(int uid, String email, String location) {
+		UserInfo = new UserBase(uid, email, location);
+	}
+	public void setUserInfo(UserBase userInfo) {
+		UserInfo = userInfo;
 	}
 	public void setUnqID(String unqID) {
 		UnqID = unqID;

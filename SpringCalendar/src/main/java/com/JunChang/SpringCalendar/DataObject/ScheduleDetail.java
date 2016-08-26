@@ -72,13 +72,13 @@ public class ScheduleDetail extends ScheduleBase{
 		super();
 	}
 	public ScheduleDetail(ScheduleBase data) {
-		super(data.getUnqID(), data.getStartTime(), data.getEndTime(), data.getTitle());
+		super(data.getUserInfo(), data.getUnqID(), data.getStartTime(), data.getEndTime(), data.getTitle());
 	}
-	public ScheduleDetail(Date StartTime, Date EndTime, String Title,
+	public ScheduleDetail(UserBase userdata, Date StartTime, Date EndTime, String Title,
 			String location, Latlng localeLatlng, String content,
 			boolean isHoliday, boolean isRepeat, boolean isAlarm,
 			boolean alarmCheck, int alarmMin, int color, String status) {
-		super(StartTime, EndTime, Title);
+		super(userdata, StartTime, EndTime, Title);
 		Location = location;
 		LocaleLatlng = localeLatlng;
 		Content = content;
@@ -90,11 +90,11 @@ public class ScheduleDetail extends ScheduleBase{
 		Color = color;
 		Status = status;
 	}
-	public ScheduleDetail(String UnqID, Date StartTime, Date EndTime, String Title,
+	public ScheduleDetail(UserBase userdata, String UnqID, Date StartTime, Date EndTime, String Title,
 			String location, Latlng localeLatlng, String content,
 			boolean isHoliday, boolean isRepeat, boolean isAlarm,
 			boolean alarmCheck, int alarmMin, int color, String status) {
-		super(UnqID, StartTime, EndTime, Title);
+		super(userdata, UnqID, StartTime, EndTime, Title);
 		Location = location;
 		LocaleLatlng = localeLatlng;
 		Content = content;
